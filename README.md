@@ -1,6 +1,6 @@
-## Library Management Project Overview
+## BookShelf Project Overview
 
-This **Library Management** API, built with **TypeScript** and **Express.js**, integrates **MongoDB via Mongoose** and uses **Zod** for validation. It provides endpoints for managing books and borrow records, including creation, retrieval, updating, deletion, borrowing with due dates. The API also includes an aggregation-based summary of borrowed books, supporting business logic.
+**BookShelf** is a dynamic *minimal library management application* that enables users to manage books and borrowing activities efficiently. Built using modern technologies and clean architecture, it features a user-friendly UI, robust backend, and real-time validation.
 
 <br/>
 <br/>
@@ -91,7 +91,7 @@ Retrieve Borrowed Books Summary
 
 Clone the Repository
 
-git clone https://github.com/Rika4698/Library-Management-Backend.git
+git clone https://github.com/Rika4698/library-management-server.git
 
 cd Library-Management-Backend
 
@@ -109,10 +109,10 @@ DATABASE_URL=< mongodb-uri >
 
 Start the Server
 
-npm start
+npm run dev
 
 The server will start running on http://localhost:5000.
 
-Live Server Link: https://library-management-backend-five.vercel.app/
+Live Server Link: https://library-management-server-liard.vercel.app/
 
-"# library-management-server" 
+

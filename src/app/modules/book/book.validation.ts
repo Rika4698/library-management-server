@@ -11,7 +11,7 @@ export const createBookZodSchema = z.object({
         description: z.string().optional(),
         copies: z.number().min(0),
         available: z.boolean().optional(),
-        photoUrl: z.string().url(),
+        
     }),
 });
 
@@ -24,6 +24,6 @@ export const updateBookZodSchema = z.object({
         description: z.string().optional(),
         copies: z.number().min(0).optional(),
         available: z.boolean().optional(),
-        photoUrl: z.string().url(),
+        
     }),
 });

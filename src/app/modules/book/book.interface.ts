@@ -9,7 +9,7 @@ export interface LBook {
     description?: string;
     copies: number;
     available?: boolean;
-    photoUrl: string;
+    
 
 
 }
@@ -19,5 +19,6 @@ export interface IBookFilter {
   filter?: string;
   sortBy?: string;
   sort?: 'asc' | 'desc';
+  page?: number | string;
   limit?: string | number;
 }

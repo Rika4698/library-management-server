@@ -23,11 +23,38 @@ export const getBooks = async (filter: IBookFilter) => {
     } else {
         sortQuery.createAt = -1;
     }
-
+   
+    const page = typeof filter.page === 'string'
+  ? parseInt(filter.page)
+  : typeof filter.page === 'number'
+    ? filter.page
+    : 1;
     //limit
-    const limit = typeof filter.limit === 'string' ? parseInt(filter.limit): filter.limit || 10;
+     const limit =
+    typeof filter.limit === 'string'
+      ? parseInt(filter.limit)
+      : typeof filter.limit === 'number'
+        ? filter.limit
+        : 10;
+        const skip = (page - 1) * limit;
 
-    return await BookModel.find(query).sort(sortQuery).limit(limit);
+
+    const books = await BookModel.find(query)
+    .sort(sortQuery)
+    .skip(skip)
+    .limit(limit);
+
+  const total = await BookModel.countDocuments(query);
+
+  return {
+    data: books,
+    meta: {
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit),
+    },
+  };
 };
 
 

@@ -8,7 +8,11 @@ import { borrowRoutes } from "./app/modules/borrow/borrow.route";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ['http://localhost:5173', 'https://library-management-client-ebon.vercel.app']
+   })
+)
 app.use(express.json());
 
 app.use('/api/books', bookRoutes);

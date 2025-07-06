@@ -35,10 +35,7 @@ const bookSchema = new Schema<LBook>({
         type: Boolean,
         default: true,
     },
-    photoUrl: { 
-        type: String,
-        required:true
-    },
+    
     
 
 },
